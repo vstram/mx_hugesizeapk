@@ -1,0 +1,12 @@
+###
+
+POST "http://localhost:8090/admin"
+Content-Type: application/json
+X-M2EE-Authentication: M2M3MTNjZjEtMDcyMS00ZWNiLWI5MjktZWJlNTc4MjAzOWMz
+
+{
+    "action": "runtime_statistics",
+    "params": {}
+}
+
+###

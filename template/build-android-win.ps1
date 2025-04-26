@@ -28,16 +28,27 @@ try {
     $env:JAVA_HOME = 'C:\programas\Android\AndroidStudio\jbr' # JAVA17
     $env:ANDROID_HOME = 'C:\programas\Android\SDK\'
 
-    Write-Host "Starting Android APK Debug Build -------------------------------------------"
-    $cmd = ".\gradlew.bat assembleAppstoreDebug --stacktrace"
-    # $cmd = ".\gradlew :app:assembleAppstoreDebug  --PreactNativeArchitectures=x86,x86_64"
+    # Write-Host "Starting Android APK Debug Build -------------------------------------------"
+    # $cmd = ".\gradlew.bat assembleAppstoreDebug --stacktrace"
+    # # $cmd = ".\gradlew :app:assembleAppstoreDebug  --PreactNativeArchitectures=x86,x86_64"
+    # Invoke-Expression $cmd
+    # Write-Host "Android APK Build Debug Complete."
+
+    Write-Host "Starting Android APK Release Build -------------------------------------------"
+    $cmd = ".\gradlew.bat assembleAppstoreRelease --stacktrace"
     Invoke-Expression $cmd
-    Write-Host "Android APK Build Debug Complete."
+    Write-Host "Android APK Build Release Complete."
+
 
     # Write-Host "Starting Android MIN Debug Build ------------------------------------------"
     # $cmd = ".\gradlew.bat assembleDevDebug --stacktrace"
     # Invoke-Expression $cmd
     # Write-Host "Android MIN Build Debug Complete."
+
+    # Write-Host "Starting Android AAB Debug Build -------------------------------------------"
+    # $cmd = ".\gradlew.bat bundleAppstoreDebug --stacktrace"
+    # Invoke-Expression $cmd
+    # Write-Host "Android AAB Build Debug Complete."
 }
 catch {
     Write-Error "Error when executing Gradle"
